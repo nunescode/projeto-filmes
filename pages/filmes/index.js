@@ -18,11 +18,12 @@ const index = ({ filmes }) => {
                     <Col className={styles.colUm}>
                         <Card className={styles.cardtamanho} >
                             <Card.Img variant="top" src={"https://image.tmdb.org/t/p/w500" + item.backdrop_path} />
-                            <Card.Body>
-                                <Card.Title>{item.title}</Card.Title>
-                                <p><MdNewReleases/><strong>     Lançamento: </strong>{item.release_date}</p>
-                                <p><FaStar/><strong>    Nota: </strong>{item.vote_average}</p>
-                                <Link className='btn btn-danger' href={'/filmes/' + item.id}>Detalhes</Link>
+                            <Card.Body className={styles.fixedbody}>  
+                                <Card.Title className={styles.cardtitle}>{item.title}</Card.Title>
+                                <br/>
+                                <p className={styles.releaseinfo}><MdNewReleases/><strong>     Lançamento: </strong>{item.release_date}</p>
+                                <p className={styles.releaseinfo}><FaStar/><strong>    Nota: </strong>{item.vote_average}</p>
+                                <Link className={styles.link} href={'/filmes/' + item.id}>Detalhes</Link>              
                             </Card.Body>
                         </Card>
                     </Col>
